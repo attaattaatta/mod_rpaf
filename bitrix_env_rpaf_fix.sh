@@ -57,7 +57,7 @@ apxs -c -i /tmp/mod_rpaf.c
 mv /etc/httpd/bx/conf/mod_rpaf.conf /etc/httpd/bx/conf/mod_rpaf.disabled_conf || true
 mv /etc/httpd/bx-scale/conf/mod_rpaf.conf /etc/httpd/bx-scale/conf/mod_rpaf.disabled_conf || true
 
-> /etc/httpd/bx/custom/rpaf.conf
+> /etc/httpd/bx/custom/rpaf.conf || true
 
 cat <<EOT >> /etc/httpd/bx/custom/rpaf.conf
 LoadModule              rpaf_module modules/mod_rpaf.so
