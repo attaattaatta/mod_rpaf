@@ -35,6 +35,12 @@ then
         exit 1
 fi
 
+# check bitrix env
+if [ ! -f /opt/webdir/bin/bx-sites ]; then
+	printf "${LRV}NOT BITRIX ENV${NCV}";
+	exit 1
+fi
+
 # check free space
 check_free_space_func
 
