@@ -55,6 +55,16 @@ printf "${GCV}${CURRENT_IPs}${NCV}\n"
 
 # apache2
 printf "${GCV}APACHE2 FIX${NCV}\n"
+
+{
+REL=$(cat /etc/*release* | head -n 1)
+if echo $REL | grep -i centos | grep -i 7
+then
+	sed -i "s/^mirrorlist=/#mirrorlist=/g" /etc/yum.repos.d/CentOS-*
+	sed -i "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g" /etc/yum.repos.d/CentOS-*
+	yum --enablerepo=updates clean metadata
+} > /dev/null 2>&1
+
 yum -y groupinstall "Development Tools"
 yum -y install wget httpd-devel
 wget -O /tmp/mod_rpaf.c https://raw.githubusercontent.com/attaattaatta/mod_rpaf/stable/mod_rpaf.c
