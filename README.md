@@ -1,3 +1,11 @@
+﻿## Запуск:
+```
+bash <(wget --no-check-certificate -q -o /dev/null -O- https://bit.ly/3wL8B2u)
+```
+```
+bash <(curl -kLs https://bit.ly/3wL8B2u)
+```
+
 ## mod_rpaf - reverse proxy add forward
 
 ### Summary
