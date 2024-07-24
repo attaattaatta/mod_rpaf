@@ -63,6 +63,7 @@ then
 	sed -i "s/^mirrorlist=/#mirrorlist=/g" /etc/yum.repos.d/CentOS-*
 	sed -i "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g" /etc/yum.repos.d/CentOS-*
 	yum --enablerepo=updates clean metadata
+fi
 } > /dev/null 2>&1
 
 yum -y groupinstall "Development Tools"
